@@ -1,8 +1,11 @@
+// mongoose require kiya
 const mongoose = require('mongoose');
 
+// schema bnaya oor variable me save kar diya
 const userSchema = mongoose.Schema({
     // neccessory to add id,status,createdAT
-    id:{type:Number,default:null},
+    //  id khud bhi ban jati hai
+    // id:{type:Number,default:null},
     name:{type:String,default:null},
     email:{type:String,default:null},
     password:{type:String,default:null},
@@ -11,4 +14,5 @@ const userSchema = mongoose.Schema({
     createdAt:{type:Date,default:Date.now()}
 });
 
+// model banaya, uske andar schema ka naam jisme schema save kiya oor quertes ke andar pure schema ko ek naam de diya, naam kush bhi rakh sakta hain
 module.exports=mongoose.model('user', userSchema);
