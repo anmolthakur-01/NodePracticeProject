@@ -15,11 +15,11 @@ let add = (req, res) => {
         massage: "User added successfully",
         data: saveData,
       })
-      .catch({
-        status: false,
-        message: "Internal error occur",
-        error: err.message,
-      });
+    .catch({
+      status: false,
+      message: "Internal error occur",
+      error: err.message,
+    });
   });
 };
 
