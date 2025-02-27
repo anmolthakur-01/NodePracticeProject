@@ -18,7 +18,7 @@ let add = (req, res) => {
       .catch({
         status: false,
         message: "Internal error occur",
-        error: err.massage,
+        error: err.message,
       });
   });
 };
