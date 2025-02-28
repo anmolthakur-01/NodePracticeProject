@@ -9,5 +9,8 @@ const categoryController = require("../server/category/categoryController");
 router.post("/register", userController.add);
 router.post("/validation/add", categoryController.addCategory);
 router.post("/category/getall", categoryController.getAllCategory);
+router.post("/category/getsingle", categoryController.singleCategoryData);
+router.post("/user/read", userController.readUser);
+router.post("/read/single", userController.readSingleUser);
 
 module.exports = router;

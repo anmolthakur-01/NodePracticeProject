@@ -1,7 +1,7 @@
 const Category = require("./categoryModel");
 
 const addCategory = (req, res) => {
-  //  validation check start, if we want to add check-validation in my code, we only in sensert if part's code
+  //  validation check start, if we want to add check-validation to input data, we only insert if part in code
   var validationerror = [];
   if (!req.body.categoryName) validationerror.push("categoryName is required");
   if (!req.body.description) validationerror.push("description is required");
@@ -37,6 +37,7 @@ const addCategory = (req, res) => {
   }
 };
 
+//create api to read data
 const getAllCategory = (req, res) => {
   Category.find()
     .then((categoryData) => {
@@ -66,4 +67,23 @@ const getAllCategory = (req, res) => {
     });
 };
 
-module.exports = { addCategory, getAllCategory};
+// create api to read perticular category data
+const singleCategoryData = (req, res) => {
+  Category.findOne({ _id: req.body._id })
+    .then((data) => {
+      res.send({
+        status: true,
+        message: "data leaded",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      res.send({
+        status: false,
+        message: "Internal sever error",
+        error: err.message,
+      });
+    });
+};
+
+module.exports = { addCategory, getAllCategory, singleCategoryData };
