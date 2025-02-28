@@ -19,8 +19,7 @@ const addCategory = (req, res) => {
     const categoryObj = Category();
     categoryObj.categoryName = req.body.categoryName;
     categoryObj.description = req.body.description;
-    categoryObj
-      .save()
+    categoryObj.save()
       .then((saveData) => {
         res.send({
           status: true,
