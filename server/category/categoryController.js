@@ -73,7 +73,7 @@ const singleCategoryData = (req, res) => {
     .then((data) => {
       res.send({
         status: true,
-        message: "data leaded",
+        message: "data loaded",
         data: data,
       });
     })
